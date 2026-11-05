@@ -2,13 +2,18 @@ package com.example.sonarqubelab;
 
 public class App {
     public static void main(String[] args) {
-        String message = "Hello from SonarQube lab";
-        System.out.println(message);
-        System.out.println(calculateTotal(10, 5));
+        String message = getWelcomeMessage();
+        int total = calculateTotal(10, 5);
+        if (message == null || total <= 0) {
+            throw new IllegalStateException("App initialization failed");
+        }
+    }
+
+    public static String getWelcomeMessage() {
+        return "Hello from SonarQube lab";
     }
 
     public static int calculateTotal(int a, int b) {
-        int result = a + b;
-        return result;
+        return a + b;
     }
 }

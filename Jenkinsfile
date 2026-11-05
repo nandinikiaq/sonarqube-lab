@@ -48,7 +48,9 @@ pipeline {
                     sh '''
                         mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                         -Dsonar.projectKey=sonarqube-lab \
-                        -Dsonar.projectName=sonarqube-lab
+                        -Dsonar.projectName=sonarqube-lab \
+                        -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
+                        -Dsonar.junit.reportPaths=target/surefire-reports
                     '''
                 }
             }
