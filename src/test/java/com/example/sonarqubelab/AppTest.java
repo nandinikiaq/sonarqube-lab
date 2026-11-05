@@ -4,16 +4,19 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class AppTest {
     @Test
     void shouldAddNumbers() {
-        assertEquals(15, App.calculateTotal(10, 5));
+        assertEquals(15, App.add(10, 5));
     }
 
     @Test
-    void shouldReturnWelcomeMessage() {
-        assertEquals("Hello from SonarQube lab", App.getWelcomeMessage());
+    void shouldDetectEvenNumbers() {
+        assertTrue(App.isEven(10));
+        assertFalse(App.isEven(11));
     }
 
     @Test

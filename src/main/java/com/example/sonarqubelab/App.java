@@ -1,19 +1,21 @@
 package com.example.sonarqubelab;
 
-public class App {
+public final class App {
+    private App() {
+    }
+
     public static void main(String[] args) {
-        String message = getWelcomeMessage();
-        int total = calculateTotal(10, 5);
-        if (message == null || total <= 0) {
-            throw new IllegalStateException("App initialization failed");
+        int total = add(10, 5);
+        if (total <= 0) {
+            throw new IllegalStateException("Invalid calculation result");
         }
     }
 
-    public static String getWelcomeMessage() {
-        return "Hello from SonarQube lab";
+    public static int add(int a, int b) {
+        return a + b;
     }
 
-    public static int calculateTotal(int a, int b) {
-        return a + b;
+    public static boolean isEven(int value) {
+        return value % 2 == 0;
     }
 }
